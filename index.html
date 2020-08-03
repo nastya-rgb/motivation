@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icons8-клевер-96.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <header>
+           <a href="#" class="logo">Good<span>Books</span></a>
+           <ul>
+               <li><a href="index.html" class="active">Home</a></li>
+               <li> <a href="muse.html">Muse</a></li>
+               <li> <a href="about.html">About</a></li>
+               <div class="dropdown">
+                <li><a href="#"> <span style="color:white; cursor: pointer;">Contact</a></span></li>
+                <div class="dropdown-content">
+                  <p>8(777)079 73-58</p>
+                </div>
+              </div>
+
+           </ul>
+        </header>
+        <div class="content">
+            <div class="bannerText" id="slideshowText">
+             <div class="active">
+                 <h2>Читай </h2>
+
+                 <p> Человек перестаёт мыслить,<br>
+                    когда перестаёт читать </p>
+                    <a href="#" style="text-decoration: none; font-size: 20px; padding:5px">Прокачай мозг</a> 
+             </div> 
+          
+             
+             <div>
+                <h2>Вдохновляйся</h2>
+
+                <p> 
+                 Книга – это есть мир, видимый через человека 
+
+                </p>
+                   <a href="#" style="text-decoration: none; font-size: 20px; padding:5px">Прокачай мозг</a>   
+            </div> 
+
+            <div>
+                <h2>Развивайся</h2>
+
+                <p> 
+                    Чтение для ума — то же, что физические упражнения для тела. </p>
+                   <a href="#" style="text-decoration: none; font-size: 20px; padding:5px">Прокачай мозг</a> 
+            </div> 
+
+
+            </div>
+            <div class="bannerImg" id="slideshow">
+                <img src="img1.png" class="active">
+                <img src="img2.png">
+                <img src="img3.png">
+            </div>
+        </div>
+        
+        <div class="icons">
+            <ul class="sci">
+                 <li><a href="https://www.instagram.com/golovinova_stasia/"><img src="icons8-instagram-48.png"> </a></li>
+                 <li><a href="https://vk.com/carolina_leonhardt"><img src="icons8-вконтакте-48.png"> </a></li>
+                 <li><a href="https://web.whatsapp.com/"><img src="watsapp.png"> </a></li>
+            </ul>
+
+            <ul class="controls">
+            <li><a><img src="left1.png" onclick="prevSlide();prevSlideText()"></a></li>
+            <li><a><img src="right1.png" onclick="nextSlide();nextSlideText()" ></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    var slideshow = document.getElementById('slideshow');
+    var slides = slideshow.getElementsByTagName('img');
+    var index=0;
+
+    function nextSlide(){
+        slides[index].classList.remove('active');
+        index=(index+1) % slides.length;
+        slides[index].classList.add('active');
+    }
+    function prevSlide(){
+        slides[index].classList.remove('active');
+        index=(index - 1+slides.length) % slides.length;
+        slides[index].classList.add('active');
+    }
+
+
+
+    var slideshowText = document.getElementById('slideshowText');
+    var slidesText = slideshowText.getElementsByTagName('div');
+    var i=0;
+
+    function nextSlideText(){
+        slidesText[i].classList.remove('active');
+        i=(i+1) % slidesText.length;
+        slidesText[i].classList.add('active');
+    }
+    function prevSlideText(){
+        slidesText[i].classList.remove('active');
+        i=(i - 1+slidesText.length) % slidesText.length;
+        slidesText[i].classList.add('active');
+    }
+    </script>
+</body>
+</html>
